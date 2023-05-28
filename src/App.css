@@ -1,0 +1,10 @@
+.App header img {
+  background-color: var(--Desaturated-Dark-Cyan);
+  width: 100%;
+}
+
+.App main {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}

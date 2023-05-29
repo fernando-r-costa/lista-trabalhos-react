@@ -26,7 +26,7 @@
 .div2 {
     grid-area: 1 / 2 / 2 / 3;
     display: inline-flex;
-    align-items: end;
+    align-items: flex-end;
     color: var(--Desaturated-Dark-Cyan);
     font-weight: 700;
 }

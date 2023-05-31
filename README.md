@@ -29,9 +29,9 @@ Os usuários devem ser capazes de:
 
 ## Meu processo
 
-- [ ] Desktop-design
+- [x] Desktop-design
+- [x] Mobile-design
 - [ ] Estados ativos
-- [ ] Mobile-design
 - [ ] Filtro
 
 ## Autor

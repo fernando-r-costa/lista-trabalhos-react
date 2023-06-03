@@ -1,5 +1,6 @@
 import './App.css';
 import Trabalho from './Componentes/Trabalho';
+import { useState } from 'react';
 
 const itens = [
   {
@@ -155,6 +156,13 @@ const itens = [
 ];
 
 function App() {
+
+  
+
+  // const lowerBusca = busca.toLowerCase()
+
+  const itensFilter = itens.filter((item) => item.languages.includes(busca));
+
   return (
     <div className="App">
       <header>
@@ -171,7 +179,7 @@ function App() {
             novo={item.new}
             destaque={item.featured}
             cargo={item.position}
-            area={item.role}
+            area={itens.role.filter(item => item.itens.role.includes(busca) )}
             nivel={item.level}
             data={item.postedAt}
             jornada={item.contract}

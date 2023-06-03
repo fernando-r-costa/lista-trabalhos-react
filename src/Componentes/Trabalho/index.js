@@ -2,6 +2,7 @@ import './Trabalho.css';
 
 
 const Trabalho = ({ empresa, logo, novo, destaque, cargo, area, nivel, data, jornada, localidade, linguagens, ferramentas }) => {
+    const [busca, setBusca] = useState([]);
     return (
         <div className="trabalho">
             {destaque === false ?
@@ -25,7 +26,10 @@ const Trabalho = ({ empresa, logo, novo, destaque, cargo, area, nivel, data, jor
                 <li>{localidade}</li>
             </div>
             <div className="div5">
-                <li>{area}</li>
+                <li 
+                    value={area}
+                    onClick={(evento) => setBusca(evento.target.value)}
+                >{area}</li>
                 <li>{nivel}</li>
                 {linguagens.map(linguagem => 
                 <li key={linguagem}>{linguagem}</li>

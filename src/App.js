@@ -157,11 +157,19 @@ const itens = [
 
 function App() {
 
-  
+  const [buscaCampo, setBuscaCampo] = useState('');
+  const [buscaFiltro, setBuscaFiltro] = useState('');
+
+  const aoSelecionar = (campo, filtro) => {
+    setBuscaCampo(campo)
+    setBuscaFiltro(filtro)
+    console.log("campo é"+ buscaCampo) 
+    console.log("filtro é"+ buscaFiltro)
+  }
 
   // const lowerBusca = busca.toLowerCase()
 
-  const itensFilter = itens.filter((item) => item.languages.includes(busca));
+  const itensFilter = {itens.filter((item) => item.buscaCampo.includes(buscaFiltro))};
 
   return (
     <div className="App">
@@ -171,7 +179,7 @@ function App() {
 
       <main>
 
-        {itens.map(item =>
+        {itensFilter.map(item =>
           <Trabalho
             key={item.id}
             empresa={item.company}
@@ -179,13 +187,14 @@ function App() {
             novo={item.new}
             destaque={item.featured}
             cargo={item.position}
-            area={itens.role.filter(item => item.itens.role.includes(busca) )}
+            area={item.role}
             nivel={item.level}
             data={item.postedAt}
             jornada={item.contract}
             localidade={item.location}
             linguagens={item.languages}
             ferramentas={item.tools}
+            clicar={aoSelecionar}
           />)}
       </main>
     </div>

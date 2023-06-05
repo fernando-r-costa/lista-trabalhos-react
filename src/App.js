@@ -157,19 +157,25 @@ const itens = [
 
 function App() {
 
-  const [buscaCampo, setBuscaCampo] = useState('');
-  const [buscaFiltro, setBuscaFiltro] = useState('');
+  let [parametro, setParametro] = useState()
+  let [filtro, setFiltro] = useState(itens.filter((item) => item))
 
-  const aoSelecionar = (campo, filtro) => {
-    setBuscaCampo(campo)
-    setBuscaFiltro(filtro)
-    console.log("campo é"+ buscaCampo) 
-    console.log("filtro é"+ buscaFiltro)
+  const aoSelecionar = (campo, param) => {
+    setParametro(parametro = param)
+
+    if (campo === "role") {
+      setFiltro(filtro = itensFilter.filter((item) => item.role.includes(parametro)))
+    } else if (campo === "level") {
+      setFiltro(filtro = itensFilter.filter((item) => item.level.includes(parametro)))
+    } else if (campo === "languages") {
+      setFiltro(filtro = itensFilter.filter((item) => item.languages.includes(parametro)))
+    } else if (campo === "tools") {
+      setFiltro(filtro = itensFilter.filter((item) => item.tools.includes(parametro)))
+    }
+
   }
 
-  // const lowerBusca = busca.toLowerCase()
-
-  const itensFilter = {itens.filter((item) => item.buscaCampo.includes(buscaFiltro))};
+  const itensFilter = filtro
 
   return (
     <div className="App">

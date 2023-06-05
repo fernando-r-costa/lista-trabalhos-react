@@ -24,15 +24,21 @@ const Trabalho = ({ empresa, logo, novo, destaque, cargo, area, nivel, data, jor
                 <li>{localidade}</li>
             </div>
             <div className="div5">
-                <li 
+                <li
                     onClick={() => clicar("role", area)}
                 >{area}</li>
-                <li>{nivel}</li>
-                {linguagens.map(linguagem => 
-                <li key={linguagem}>{linguagem}</li>
+                <li
+                    onClick={() => clicar("level", nivel)}
+                >{nivel}</li>
+                {linguagens.map(linguagem =>
+                    <li key={linguagem}
+                        onClick={() => clicar("languages", linguagem)}
+                    >{linguagem}</li>
                 )}
-                {ferramentas.map(ferramenta => 
-                <li key={ferramenta}>{ferramenta}</li>
+                {ferramentas.map(ferramenta =>
+                    <li key={ferramenta}
+                        onClick={() => clicar("tools", ferramenta)}
+                    >{ferramenta}</li>
                 )}
             </div>
         </div>
